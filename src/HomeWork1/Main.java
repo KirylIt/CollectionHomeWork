@@ -1,6 +1,10 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+package HomeWork1;
 
+import java.util.ArrayList;
+
+/**
+ * Author Kirill_Kunavich
+ */
 public class Main {
     public static void main(String[] args) {
         // Задание 1 Динамический массив
@@ -11,14 +15,21 @@ public class Main {
         // 5.Получить массив, содержащий ящики коллекции, тремя способами и вывести на консоль.
         // 6.Удалить все ящики.
 
-        class HeavyBox{
-            Integer weight;
-            HeavyBox (Integer weight){
+        class HeavyBox {
+            int  weight;
+
+            HeavyBox(int weight) {
                 this.weight = weight;
+            }
+            @Override
+            public String toString() {
+                return " " + weight;
             }
         }
 
-        HeavyBox box1 = new HeavyBox (1);
+
+        // #1
+        HeavyBox box1 = new HeavyBox(1);
         HeavyBox box2 = new HeavyBox(245);
         HeavyBox box3 = new HeavyBox(35);
         HeavyBox box4 = new HeavyBox(15);
@@ -29,27 +40,27 @@ public class Main {
         boxes.add(box3);
         boxes.add(box4);
 
-        for (HeavyBox b:boxes) {
+        System.out.println("********");
+        // #2
+        for (HeavyBox b : boxes ) {
             System.out.println("Box :" + b);
         }
         System.out.println("---------------");
-        System.out.println("#1");
-        //нужно достать box1 и добавить в него значение
-        boxes.set(box1 = 125);
+        // #3
+        boxes.get(0).weight = +1;
+        // #4
         boxes.remove(3);
-        for (HeavyBox o:boxes) {
+        System.out.println("#1");
+        for (HeavyBox o : boxes) {
             System.out.println("Box: " + o);
         }
         System.out.println("#2");
-        System.out.println(boxes);
+        System.out.println(boxes.toString());
         System.out.println("#3");
-        for (int i = 0; i < boxes.size(); i++) {
-            System.out.println("Box: " + i);
-        }
+        System.out.println(boxes);
         System.out.println("------");
         boxes.clear();
         System.out.println(boxes);
-
 
 
 
